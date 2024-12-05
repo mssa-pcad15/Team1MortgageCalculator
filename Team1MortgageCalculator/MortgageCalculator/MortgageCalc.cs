@@ -17,7 +17,7 @@ namespace MortgageCalculator
         public LoanInformation LoanInformation;
         public MortgageCalc(decimal loanAmount, decimal interestRate, int loanDuration)
         {
-            loanInformation = new LoanInformation()
+            LoanInformation = new LoanInformation()
             {
                 InterestRate = interestRate,
                 LoanAmount = loanAmount,
@@ -37,15 +37,15 @@ namespace MortgageCalculator
         // keep but will prompt user to provide APR (yearly): decimal monthlyInterestRate = (InterestRate * 100) / 12;
         // TODO: review implicit type conversion
         public decimal MonthlyPayment =>
-             loanInformation.LoanAmount * (loanInformation.InterestRate / 1200) / 
-            (decimal)Math.Pow((1.0 - (double)(loanInformation.InterestRate / 1200))
-                 , loanInformation.LoanDuration);
+             LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) / 
+            (decimal)Math.Pow((1.0 - (double)(LoanInformation.InterestRate / 1200))
+                 , LoanInformation.LoanDuration);
             
 
         public void MortgagePaymentSchedule() {
-            for (var i = 1; i < loanInformation.LoanDuration; i++)
+            for (var i = 1; i < LoanInformation.LoanDuration; i++)
             {
-                loanInformation.Payments.Add(
+                LoanInformation.Payments.Add(
                     new PaymentSchedule() { }//this is where you calculate the interest, principal, the remaining balance..
                     );
        
