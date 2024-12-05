@@ -53,7 +53,13 @@ namespace MortageCalculatorTest
 		[TestMethod]
 		public void MortageFormulaOutput()
 		{
-
+			//arrange
+			decimal expected = 0;
+			decimal actual = 0;
+			//act
+			MonthlyPayment();
+			//assert
+			Assert.AreEqual(expected, actual);
 		}
 
 
