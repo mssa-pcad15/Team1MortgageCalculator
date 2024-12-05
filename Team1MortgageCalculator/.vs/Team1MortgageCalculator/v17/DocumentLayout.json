@@ -1,12 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\",
+<<<<<<< Updated upstream
   "Documents": [
     {
       "AbsoluteMoniker": "D:0:0:{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}|MortageCalculatorTest\\MortageCalculatorTest.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortagecalculatortest\\mortgagecalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}|MortageCalculatorTest\\MortageCalculatorTest.csproj|solutionrelative:mortagecalculatortest\\mortgagecalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "Documents": [],
+>>>>>>> Stashed changes
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 220,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 6,
+=======
+          "SelectedChildIndex": -1,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,6 +47,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+<<<<<<< Updated upstream
             },
             {
               "$type": "Document",
@@ -52,6 +61,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-05T18:44:24.898Z",
               "EditorCaption": ""
+=======
+>>>>>>> Stashed changes
             }
           ]
         }
