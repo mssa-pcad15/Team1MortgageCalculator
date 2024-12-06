@@ -5,6 +5,8 @@ namespace MortgageCalculator
 
     public class LoanInformation
     {
+        // add errorhandle for null values
+        // redirect to main ui page to request info again 
         public required decimal LoanAmount { get;  set; }
         public required decimal InterestRate { get;  set; }
         public required int LoanDuration { get;  set; }
@@ -13,6 +15,7 @@ namespace MortgageCalculator
 
     public class MortgageCalc
     {
+        //add errorhandle for zero or negative inputs
         public LoanInformation LoanInformation;
         public MortgageCalc(decimal loanAmount, decimal interestRate, int loanDuration)
         {

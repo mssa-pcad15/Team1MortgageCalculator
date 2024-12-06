@@ -1,6 +1,6 @@
 ﻿using MortgageCalculator;
 
-namespace MortageCalculatorTest
+namespace MortgageCalculatorTest
 {
 	//TODO create a method to validate user input is empty 2024/12/05
 	[TestClass]
