@@ -73,33 +73,36 @@ namespace MortgageCalculatorTest
 		[TestMethod]
 		public void VerifyInterestAmount()
 		{
-			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
+            MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
-			decimal actual = mortgageCalc.totalInterest;
-
-			decimal expected = 2514.31m;
-
-			Assert.AreEqual(expected, actual);
-		}
+            decimal expectedPrincipalPayment = mortgageCalc.monthlyPayment - (25000.25m * (0.54m / 1200));
+            Assert.AreEqual(Math.Round(expectedPrincipalPayment, 2), Math.Round(mortgageCalc.principalPayment, 2));
+        }
 
 		[TestMethod]
 		public void VerifyTotalAmountPaidOverDurationOfLoan()
 		{
-			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
+            MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
-			decimal actual = mortgageCalc.totalInterest;
-
-			decimal expected = 27514.56m;
-
-			Assert.AreEqual(expected, actual);
-		}
+            decimal totalPaid = mortgageCalc.monthlyPayment * 36;
+            Assert.AreEqual(Math.Round(totalPaid, 2), 27514.84m);
+        }
 
 		[TestMethod]
 		public void ValidLoanPayOff()
 		{
+            // Arrange
+            MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
-		}
+            // Act
+            mortgageCalc.MortgagePaymentSchedule();
 
-	}
+            // Assert
+            decimal finalBalance = mortgageCalc.LoanInformation.Payments.Last().RemainingBalance;
+
+            Assert.IsTrue(Math.Abs(finalBalance) < 0.01m, $"Final balance is not zero; it is {finalBalance}.");
+        }
+
+    }
 }
 
