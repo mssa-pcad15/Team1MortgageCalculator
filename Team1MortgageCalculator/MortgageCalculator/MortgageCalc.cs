@@ -40,14 +40,14 @@ namespace MortgageCalculator
             (decimal)Math.Pow((1.0 - (double)(LoanInformation.InterestRate / 1200))
                  , LoanInformation.LoanDuration);
 		public decimal remainingBalance => LoanInformation.LoanAmount - monthlyPayment;
-		public decimal interestRatePayment => remainingBalance - LoanInformation.InterestRate / 1200;
-		public decimal principalPayment  => monthlyPayment - interestRatePayment;
+        public decimal interestRatePayment => remainingBalance * (LoanInformation.InterestRate / 1200);
+        public decimal principalPayment  => monthlyPayment - interestRatePayment;
 		////TODO confirm value iniitalization
 		public decimal totalInterest  => totalInterest + interestRatePayment;
 
         
 		public void MortgagePaymentSchedule() {
-            for (var i = 1; i < LoanInformation.LoanDuration; i++)
+            for (var i = 1; i <= LoanInformation.LoanDuration; i++)
             {
                 LoanInformation.Payments.Add(
                     new PaymentSchedule()
