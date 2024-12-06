@@ -1,26 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\",
+  "WorkspaceRootPath": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}|MortageCalculatorTest\\MortgageCalculatorTest.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortagecalculatortest\\mortgagecalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}|MortageCalculatorTest\\MortgageCalculatorTest.csproj|d:\\c#\\mssa-pcad15\\team1mortgagecalculator\\team1mortgagecalculator\\mortagecalculatortest\\mortgagecalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}|MortageCalculatorTest\\MortgageCalculatorTest.csproj|solutionrelative:mortagecalculatortest\\mortgagecalctest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortgagecalculator\\mortgagecalc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|d:\\c#\\mssa-pcad15\\team1mortgagecalculator\\team1mortgagecalculator\\mortgagecalculator\\mortgagecalc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|solutionrelative:mortgagecalculator\\mortgagecalc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortgagecalculator\\paymentschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|d:\\c#\\mssa-pcad15\\team1mortgagecalculator\\team1mortgagecalculator\\mortgagecalculator\\paymentschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|solutionrelative:mortgagecalculator\\paymentschedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortgagecalculator\\mortgagecalculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|solutionrelative:mortgagecalculator\\mortgagecalculator.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|c:\\users\\okino\\source\\repos\\mssa\\team1mortagecalculator\\team1mortgagecalculator\\mortgagecalculator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{173B43BF-B77D-449E-AA13-68F9ECA4AC84}|MortgageCalculator\\MortgageCalculator.csproj|solutionrelative:mortgagecalculator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,98 +21,58 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 220,
-          "SelectedChildIndex": 9,
+          "DockedWidth": 78,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\Customer.cs",
-              "RelativeDocumentMoniker": "MortgageCalculator\\Customer.cs",
-              "ToolTip": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\Customer.cs",
-              "RelativeToolTip": "MortgageCalculator\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-06T01:17:37.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MortgageCalculator",
-              "DocumentMoniker": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
-              "RelativeDocumentMoniker": "MortgageCalculator\\MortgageCalculator.csproj",
-              "ToolTip": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
-              "RelativeToolTip": "MortgageCalculator\\MortgageCalculator.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-06T01:17:04.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PaymentSchedule.cs",
-              "DocumentMoniker": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\PaymentSchedule.cs",
-              "RelativeDocumentMoniker": "MortgageCalculator\\PaymentSchedule.cs",
-              "ToolTip": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\PaymentSchedule.cs",
-              "RelativeToolTip": "MortgageCalculator\\PaymentSchedule.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T23:56:40.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PaymentSchedule.cs",
+              "DocumentMoniker": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\PaymentSchedule.cs",
+              "RelativeDocumentMoniker": "MortgageCalculator\\PaymentSchedule.cs",
+              "ToolTip": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\PaymentSchedule.cs",
+              "RelativeToolTip": "MortgageCalculator\\PaymentSchedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T03:42:07.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MortgageCalcTest.cs",
-              "DocumentMoniker": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortageCalculatorTest\\MortgageCalcTest.cs",
+              "DocumentMoniker": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortageCalculatorTest\\MortgageCalcTest.cs",
               "RelativeDocumentMoniker": "MortageCalculatorTest\\MortgageCalcTest.cs",
-              "ToolTip": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortageCalculatorTest\\MortgageCalcTest.cs",
-              "RelativeToolTip": "MortageCalculatorTest\\MortgageCalcTest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAPAAAAAAAAAA==",
+              "ToolTip": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortageCalculatorTest\\MortgageCalcTest.cs*",
+              "RelativeToolTip": "MortageCalculatorTest\\MortgageCalcTest.cs*",
+              "ViewState": "AgIAAD0AAAAAAAAAAAA0wE8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T23:53:47.642Z",
+              "WhenOpened": "2024-12-06T00:51:19.235Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MortgageCalc.cs",
-              "DocumentMoniker": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalc.cs",
+              "DocumentMoniker": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalc.cs",
               "RelativeDocumentMoniker": "MortgageCalculator\\MortgageCalc.cs",
-              "ToolTip": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalc.cs",
+              "ToolTip": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalc.cs",
               "RelativeToolTip": "MortgageCalculator\\MortgageCalc.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAABEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-05T22:26:14.465Z",
+              "WhenOpened": "2024-12-06T00:51:11.2Z",
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 352,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"

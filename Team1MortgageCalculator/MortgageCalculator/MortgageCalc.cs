@@ -7,11 +7,12 @@ namespace MortgageCalculator
     {
         // add errorhandle for null values
         // redirect to main ui page to request info again 
-        public required decimal LoanAmount { get;  set; }
-        public required decimal InterestRate { get;  set; }
-        public required int LoanDuration { get;  set; }
-        public List<PaymentSchedule> Payments = new List<PaymentSchedule>();
-	}
+        public required decimal LoanAmount { get; set; }
+        public required decimal InterestRate { get; set; }
+        public required int LoanDuration { get; set; }
+        public List<PaymentSchedule> Payments { get; set; } = new List<PaymentSchedule>();
+    
+    }
 
     public class MortgageCalc
     {
@@ -36,10 +37,9 @@ namespace MortgageCalculator
         // keep but will prompt user to provide APR (yearly): decimal monthlyInterestRate = (InterestRate * 100) / 12;
         // TODO: review implicit type conversion
         public decimal monthlyPayment =>
-             LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) / 
-            (decimal)Math.Pow((1.0 - (double)(LoanInformation.InterestRate / 1200))
-                 , LoanInformation.LoanDuration);
-		public decimal remainingBalance => LoanInformation.LoanAmount - monthlyPayment;
+     LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) /
+     (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), LoanInformation.LoanDuration));
+        public decimal remainingBalance => LoanInformation.LoanAmount - monthlyPayment;
         public decimal interestRatePayment => remainingBalance * (LoanInformation.InterestRate / 1200);
         public decimal principalPayment  => monthlyPayment - interestRatePayment;
 		////TODO confirm value iniitalization
@@ -47,17 +47,26 @@ namespace MortgageCalculator
 
         
 		public void MortgagePaymentSchedule() {
+            decimal balance = LoanInformation.LoanAmount;
+            decimal totalInterestPaid = 0;
+
             for (var i = 1; i <= LoanInformation.LoanDuration; i++)
             {
+                decimal interestPayment = balance * (LoanInformation.InterestRate / 1200);
+                decimal principalPayment = monthlyPayment - interestPayment;
+                balance -= principalPayment;
+                totalInterestPaid += interestPayment;
+
                 LoanInformation.Payments.Add(
                     new PaymentSchedule()
                     {
                         Month = i,
                         MonthlyPayment = Math.Round(monthlyPayment, 2),
                         PrincipalPayment = Math.Round(principalPayment, 2),
-                        InterestRatePayment = Math.Round(interestRatePayment, 2),
-					    TotalInterest = Math.Round(totalInterest, 2),
-                }); //this is where you calculate the interest, principal, the remaining balance..
+                        InterestRatePayment = Math.Round(interestPayment, 2),
+                        TotalInterest = Math.Round(totalInterestPaid, 2),
+                        RemainingBalance = Math.Round(balance, 2)
+                    }); //this is where you calculate the interest, principal, the remaining balance..
 			} 
             
         }
