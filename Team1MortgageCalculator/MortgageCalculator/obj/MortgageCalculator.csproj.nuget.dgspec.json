@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj": {}
+    "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj": {
+    "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
+        "projectUniqueName": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
         "projectName": "MortgageCalculator",
-        "projectPath": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
-        "packagesPath": "C:\\Users\\okino\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\okino\\source\\repos\\MSSA\\Team1MortageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\obj\\",
+        "projectPath": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\MortgageCalculator.csproj",
+        "packagesPath": "C:\\Users\\Flaco\\.nuget\\packages\\",
+        "outputPath": "D:\\c#\\MSSA-PCAD15\\Team1MortgageCalculator\\Team1MortgageCalculator\\MortgageCalculator\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\okino\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Flaco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -43,9 +43,8 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+          "auditMode": "direct"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
