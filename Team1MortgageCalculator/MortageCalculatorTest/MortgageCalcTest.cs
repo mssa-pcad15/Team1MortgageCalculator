@@ -7,52 +7,29 @@ namespace MortageCalculatorTest
 	public sealed class MortgageCalcTest
 	{
 		[TestMethod]
-		public void ValidateUserInputNumberic()
+		public void MortgageCalConstuctorPopulateLoanInformationPropertyCorrectly()
+		{
+
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
+			LoanInformation loanInformation = mortgageCalc.LoanInformation;
+
+			
+			Assert.AreEqual(25000m,loanInformation.LoanAmount);
+            Assert.AreEqual(0.54m,loanInformation.InterestRate);
+			Assert.AreEqual(36, loanInformation.LoanDuration);
+
+        }
+
+		[TestMethod]
+		public void MortagePaymentFormulaOutputCorrect()
 		{
 			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
-			// arrange
-			LoanInformation loanInformation = new LoanInformation();
+			decimal actual = mortgageCalc.monthlyPayment;
 
-			// act
-			string inputAmount = loanInformation.LoanAmount.ToString();
-            string inputInterest = loanInformation.InterestRate.ToString();
-            string inputDuration = loanInformation.LoanDuration.ToString();
-            //MortgageCalc(princialAmout: 20000, termDuration: 30, interestReate: 5);
-            //decimal result = default(decimal);
-            // assert
+			decimal expected = 63.69m;
 
-            Assert.IsTrue(decimal.TryParse(inputAmount, out decimal resultAmount));
-            Assert.IsTrue(decimal.TryParse(inputInterest, out decimal resultInterest));
-            Assert.IsTrue(decimal.TryParse(inputDuration, out decimal resultDuration));
-
-        }
-
-
-		[TestMethod]
-		public void ValidateUserInputNull()
-		{
-            MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
-
-            // arrange
-            LoanInformation loanInformation = new LoanInformation();
-
-            // act
-            string inputAmount = loanInformation.LoanAmount.ToString();
-            string inputInterest = loanInformation.InterestRate.ToString();
-            string inputDuration = loanInformation.LoanDuration.ToString();
-
-			// assert
-			Assert.IsNull(inputDuration);
-			Assert.IsNull(inputInterest);
-			Assert.IsNull(inputAmount);
-			
-
-        }
-
-		[TestMethod]
-		public void MortageFormulaOutput()
-		{
+			Assert.AreEqual(expected, actual);
 
 		}
 
@@ -60,25 +37,61 @@ namespace MortageCalculatorTest
 		[TestMethod]
 		public void VerfyMonthlyPrincipalPayment()
 		{
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
+			decimal actual = mortgageCalc.monthlyPayment;
+
+			decimal expected = 63.69m;
+
+			Assert.AreEqual(expected, actual);
 		}
 
 		[TestMethod]
 		public void VerfyMontlyInterestPayment() 
-		{ 
+		{
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
+			decimal actual = mortgageCalc.interestRatePayment;
+
+			decimal expected = 5.82m;
+
+			Assert.AreEqual(expected, actual);
 		}
 
 		[TestMethod]
 		public void VerifyPrincipalAmount()
 		{
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
+			decimal actual = mortgageCalc.principalPayment;
+
+			decimal expected = 63.69m - 5.82m;
+
+			Assert.AreEqual(expected, actual);
 		}
 
 		[TestMethod]
 		public void VerifyInterestAmount()
 		{
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
+			decimal actual = mortgageCalc.totalInterest;
+
+			decimal expected = 2514.31m;
+
+			Assert.AreEqual(expected, actual);
+		}
+
+		[TestMethod]
+		public void VerifyTotalAmountPaidOverDurationOfLoan()
+		{
+			MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
+
+			decimal actual = mortgageCalc.totalInterest;
+
+			decimal expected = 27514.56m;
+
+			Assert.AreEqual(expected, actual);
 		}
 
 		[TestMethod]
