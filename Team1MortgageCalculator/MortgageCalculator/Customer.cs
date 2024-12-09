@@ -87,8 +87,13 @@ namespace MortgageCalculator
 			_customerMortgage.Add(createMortgage);
 		}
 
+		//write method to remove loan 
+		public void RemoveMortgage(string id, MortgageCalc mortgage) 
+		{ 
+			
+		}
 
 
-		//write method to remove loan after complete payment
+		//write method to delete loan after complete payment
 	}
 }
