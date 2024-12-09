@@ -38,7 +38,7 @@ namespace MortgageCalculator
         // TODO: review implicit type conversion
         public decimal monthlyPayment =>
      LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) /
-     (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), LoanInformation.LoanDuration));
+     (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), - LoanInformation.LoanDuration));
         public decimal remainingBalance => LoanInformation.LoanAmount - monthlyPayment;
         public decimal interestRatePayment => remainingBalance * (LoanInformation.InterestRate / 1200);
         public decimal principalPayment  => monthlyPayment - interestRatePayment;

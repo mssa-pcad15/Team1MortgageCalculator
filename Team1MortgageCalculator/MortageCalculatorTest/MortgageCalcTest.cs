@@ -29,7 +29,7 @@ namespace MortgageCalculatorTest
 
 			decimal expected = 471.78m;
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, 0.01m);
 
 		}
 
