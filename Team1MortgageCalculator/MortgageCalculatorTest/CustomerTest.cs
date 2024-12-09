@@ -1,7 +1,7 @@
 namespace MortgageCalculatorTest;
 
 [TestClass]
-public class Customer
+public class CustomerTest
 {
 	[TestMethod]
 	public void ConfirmCustomerInstance()

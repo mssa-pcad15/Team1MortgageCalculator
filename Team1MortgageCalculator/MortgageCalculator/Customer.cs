@@ -28,7 +28,7 @@ namespace MortgageCalculator
 
 
 		//initialize with constructor
-		//public void CustomerConstructor(string id, string firstName, string lastName, string email)
+		//public void CustomerConstructor(string firstName, string lastName, string email)
 		//{
 		//	_id = id;
 		//	FirstName = firstName;
@@ -37,9 +37,10 @@ namespace MortgageCalculator
 
 		//}
 
-		public Customer(string id, string firstName, string lastName, string email, MortgageCalc createMortgage)
+		public Customer(string firstName, string lastName, string email, MortgageCalc createMortgage)
 		{
-			Id = id;
+			
+			Id = Guid.NewGuid().ToString();
 			this.firstName = firstName;
 			this.lastName = lastName;
 			Email = email;
@@ -88,12 +89,17 @@ namespace MortgageCalculator
 		}
 
 		//write method to remove loan 
-		public void RemoveMortgage(string id, MortgageCalc mortgage) 
-		{ 
-			
+		public void RemoveMortgage(string id, int index) 
+		{
+			this._customerMortgage.RemoveAt(index);
 		}
 
 
-		//write method to delete loan after complete payment
+		// write method to delete loan after complete payment
+		public void LoanRepayment(string id, int index)
+		{
+			//add condtional from loan repayment
+			this._customerMortgage.RemoveAt(index);
+		}
 	}
 }

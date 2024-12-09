@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageCalculator", "Mortg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MortgageCalculatorTest", "MortageCalculatorTest\MortgageCalculatorTest.csproj", "{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpectreUI", "SpectreUI\SpectreUI.csproj", "{72585414-20CF-4BFF-A763-2C210DDAD4AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350EF6AA-D582-470E-9E6C-E4CB10F84EA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72585414-20CF-4BFF-A763-2C210DDAD4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72585414-20CF-4BFF-A763-2C210DDAD4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72585414-20CF-4BFF-A763-2C210DDAD4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72585414-20CF-4BFF-A763-2C210DDAD4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
