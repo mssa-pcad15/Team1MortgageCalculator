@@ -75,8 +75,8 @@ namespace MortgageCalculatorTest
 		{
             MortgageCalc mortgageCalc = new MortgageCalc(25000m, 5m, 60);
 
-            decimal expected = mortgageCalc.monthlyPayment - (25000m * (5m / 1200));
-            Assert.AreEqual(Math.Round(expected, 2), Math.Round(mortgageCalc.principalPayment(1), 2));
+            decimal expected = 104.17m;
+            Assert.AreEqual(Math.Round(expected, 2), Math.Round(mortgageCalc.interestRatePayment(1), 2));
         }
 
 		[TestMethod]
