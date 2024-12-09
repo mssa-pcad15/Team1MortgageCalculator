@@ -39,11 +39,17 @@ namespace MortgageCalculator
         public decimal monthlyPayment =>
      LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) /
      (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), - LoanInformation.LoanDuration));
-        public decimal remainingBalance => LoanInformation.LoanAmount - monthlyPayment;
-        public decimal interestRatePayment => remainingBalance * (LoanInformation.InterestRate / 1200);
-        public decimal principalPayment  => monthlyPayment - interestRatePayment;
+        public decimal remainingBalanceAtMonth(int month) => LoanInformation.LoanAmount *
+    (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), month) -
+    (monthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), month) - 1) / (LoanInformation.InterestRate / 1200));
+        public decimal interestRatePayment(int month)
+        {
+            decimal remainingBalance = remainingBalanceAtMonth(month - 1);
+            return remainingBalance * (LoanInformation.InterestRate / 1200);
+        }
+        public decimal principalPayment(int month) => monthlyPayment - interestRatePayment(month);
 		////TODO confirm value iniitalization
-		public decimal totalInterest  => totalInterest + interestRatePayment;
+		public decimal totalInterest(int month)  => totalInterest(month) + interestRatePayment(month);
 
         
 		public void MortgagePaymentSchedule() {

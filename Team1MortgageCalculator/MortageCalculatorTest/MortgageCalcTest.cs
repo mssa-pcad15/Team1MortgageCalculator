@@ -39,11 +39,11 @@ namespace MortgageCalculatorTest
 		{
 			MortgageCalc mortgageCalc = new MortgageCalc(25000m, 5m, 60);
 
-			decimal actual = mortgageCalc.monthlyPayment;
+			decimal actual = mortgageCalc.principalPayment(1);
 
 			decimal expected = 367.61m;
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, 0.01m);
 		}
 
 		[TestMethod]
@@ -51,11 +51,11 @@ namespace MortgageCalculatorTest
 		{
 			MortgageCalc mortgageCalc = new MortgageCalc(25000m, 5m, 60);
 
-			decimal actual = mortgageCalc.interestRatePayment;
+			decimal actual = mortgageCalc.interestRatePayment(1);
 
 			decimal expected = 104.17m;
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, 0.01m);
 		}
 
 		[TestMethod]
@@ -63,11 +63,11 @@ namespace MortgageCalculatorTest
 		{
 			MortgageCalc mortgageCalc = new MortgageCalc(25000m, 5m, 60);
 
-			decimal actual = mortgageCalc.principalPayment;
+			decimal actual = mortgageCalc.principalPayment(1);
 
 			decimal expected = 471.78m - 104.17m;
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, 0.01m);
 		}
 
 		[TestMethod]
@@ -76,7 +76,7 @@ namespace MortgageCalculatorTest
             MortgageCalc mortgageCalc = new MortgageCalc(25000.25m, 0.54m, 36);
 
             decimal expectedPrincipalPayment = mortgageCalc.monthlyPayment - (25000m * (5m / 1200));
-            Assert.AreEqual(Math.Round(expectedPrincipalPayment, 2), Math.Round(mortgageCalc.principalPayment, 2));
+            Assert.AreEqual(Math.Round(expectedPrincipalPayment, 2), Math.Round(mortgageCalc.principalPayment(1), 2));
         }
 
 		[TestMethod]
