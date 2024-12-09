@@ -4,6 +4,23 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>team1mortgagecalc</PackageId>
+    <Title>PCAD15Team1MortCalc</Title>
+    <Description>Mortgage Calculator class library for Team 1 MSSA PCAD15</Description>
+    <Authors>Team1</Authors>
+    <Company>PCAD15</Company>
+    <PackageProjectUrl>https://github.com/mssa-pcad15/Team1MortgageCalculator</PackageProjectUrl>
+    <PackageIcon>128 x 128 jpeg of mortgage calculator.png</PackageIcon>
+    <RepositoryUrl>https://github.com/mssa-pcad15/Team1MortgageCalculator</RepositoryUrl>
+    <PackageLicenseExpression>AFL-1.1</PackageLicenseExpression>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\Links\Downloads\128 x 128 jpeg of mortgage calculator.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
