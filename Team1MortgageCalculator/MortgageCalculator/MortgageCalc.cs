@@ -11,7 +11,15 @@ namespace MortgageCalculator
         public required decimal InterestRate { get; set; }
         public required int LoanDuration { get; set; }
         public List<PaymentSchedule> Payments { get; set; } = new List<PaymentSchedule>();
-    
+        public decimal RemainingBalance { get; set; }
+        public decimal TotalCost { get; set; }
+
+        public decimal TotalInterestPaid { get; set; }
+
+        public decimal InterestRatePayments { get; set; }
+
+
+
     }
 
     public class MortgageCalc
@@ -38,7 +46,7 @@ namespace MortgageCalculator
         // TODO: review implicit type conversion
         public decimal MonthlyPayment =>
      LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) /
-     (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), - LoanInformation.LoanDuration));
+     (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), -LoanInformation.LoanDuration));
 
 
         public decimal RemainingBalanceAtMonth(int month) => LoanInformation.LoanAmount *
@@ -53,11 +61,18 @@ namespace MortgageCalculator
         }
 
         public decimal PrincipalPayment(int month) => MonthlyPayment - InterestRatePayment(month);
-		////TODO confirm value iniitalization
-		public decimal TotalInterest(int month)  => TotalInterest(month) + InterestRatePayment(month);
+        ////TODO confirm value iniitalization
+        public decimal TotalInterest(int month) => TotalInterest(month) + InterestRatePayment(month);
 
-        
-		public void MortgagePaymentSchedule() 
+        public decimal RemainingBalance => LoanInformation.LoanAmount *
+    (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) -
+    (MonthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) - 1) / (LoanInformation.InterestRate / 1200));
+        public decimal InterestRatePayments => LoanInformation.RemainingBalance * (LoanInformation.InterestRate / 1200);
+
+        public decimal TotalInterestPaid => LoanInformation.TotalInterestPaid + LoanInformation.InterestRatePayments;
+
+
+        public void MortgagePaymentSchedule()
         {
             decimal balance = LoanInformation.LoanAmount;
             decimal totalInterestPaid = 0;
@@ -78,12 +93,13 @@ namespace MortgageCalculator
                         InterestRatePayment = Math.Round(interestPayment, 2),
                         TotalInterest = Math.Round(totalInterestPaid, 2),
                         RemainingBalance = Math.Round(balance, 2)
-                    }); //this is where you calculate the interest, principal, the remaining balance..
-			} 
-            
-        }
-        public decimal TotalCost(int month) => TotalInterest(month) + PrincipalPayment(month);
-    }
+                    });
+            }
 
+            // Update TotalInterestPaid
+            LoanInformation.TotalInterestPaid = Math.Round(totalInterestPaid, 2);
+        }
+            public decimal TotalCost => LoanInformation.TotalInterestPaid + LoanInformation.LoanAmount;
+    }
 
 }

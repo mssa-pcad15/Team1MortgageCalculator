@@ -82,9 +82,9 @@ namespace SpectreUI
                                        $"[blue]Total Principal[/]\n" +
                                        $"{loanAmount}\n" +
                                        $"[blue]Total Interest[/]\n" +
-                                       $"{loanTerm}\n" +
+                                       $"{mortgageCalc.TotalInterestPaid}\n" +
                                        $"[blue]Total Cost[/]\n" +
-                                       $"{loanTerm}\n"),
+                                       $"{mortgageCalc.TotalCost}\n"),
                             VerticalAlignment.Middle))
                         .Expand());
 
