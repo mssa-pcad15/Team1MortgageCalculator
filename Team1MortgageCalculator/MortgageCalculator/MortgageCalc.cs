@@ -36,14 +36,14 @@ namespace MortgageCalculator
 
         // keep but will prompt user to provide APR (yearly): decimal monthlyInterestRate = (InterestRate * 100) / 12;
         // TODO: review implicit type conversion
-        public decimal monthlyPayment =>
+        public decimal MonthlyPayment =>
      LoanInformation.LoanAmount * (LoanInformation.InterestRate / 1200) /
      (1 - (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), - LoanInformation.LoanDuration));
 
 
         public decimal remainingBalanceAtMonth(int month) => LoanInformation.LoanAmount *
     (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), month) -
-    (monthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), month) - 1) / (LoanInformation.InterestRate / 1200));
+    (MonthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), month) - 1) / (LoanInformation.InterestRate / 1200));
 
 
         public decimal interestRatePayment(int month)
@@ -52,19 +52,20 @@ namespace MortgageCalculator
             return remainingBalance * (LoanInformation.InterestRate / 1200);
         }
 
-        public decimal principalPayment(int month) => monthlyPayment - interestRatePayment(month);
+        public decimal principalPayment(int month) => MonthlyPayment - interestRatePayment(month);
 		////TODO confirm value iniitalization
 		public decimal totalInterest(int month)  => totalInterest(month) + interestRatePayment(month);
 
         
-		public void MortgagePaymentSchedule() {
+		public void MortgagePaymentSchedule() 
+        {
             decimal balance = LoanInformation.LoanAmount;
             decimal totalInterestPaid = 0;
 
             for (var i = 1; i <= LoanInformation.LoanDuration; i++)
             {
                 decimal interestPayment = balance * (LoanInformation.InterestRate / 1200);
-                decimal principalPayment = monthlyPayment - interestPayment;
+                decimal principalPayment = MonthlyPayment - interestPayment;
                 balance -= principalPayment;
                 totalInterestPaid += interestPayment;
 
@@ -72,7 +73,7 @@ namespace MortgageCalculator
                     new PaymentSchedule()
                     {
                         Month = i,
-                        MonthlyPayment = Math.Round(monthlyPayment, 2),
+                        MonthlyPayment = Math.Round(MonthlyPayment, 2),
                         PrincipalPayment = Math.Round(principalPayment, 2),
                         InterestRatePayment = Math.Round(interestPayment, 2),
                         TotalInterest = Math.Round(totalInterestPaid, 2),
@@ -81,7 +82,7 @@ namespace MortgageCalculator
 			} 
             
         }
-
+        public decimal TotalCost(int month) => totalInterest(month) + principalPayment(month);
     }
 
 

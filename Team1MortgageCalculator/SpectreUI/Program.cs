@@ -7,6 +7,7 @@ namespace SpectreUI
     {
         static void Main(string[] args)
         {
+           
             var firstName = AnsiConsole.Prompt(
             new TextPrompt<string>("What's your first name?"));
             var lastName = AnsiConsole.Prompt(
@@ -51,22 +52,41 @@ namespace SpectreUI
                 // Generate the payment schedule
                 mortgageCalc.MortgagePaymentSchedule();
 
-                // Display the loan details as a panel
-                var loanDetailsPanel = new Panel(
-                    new Markup($"[bold]Customer Name:[/]\n" +
-                               $"{firstName} {lastName}\n" +
-                               $"[bold]Customer Email:[/]\n" +
-                               $"{email}\n\n" +
-                               $"[bold]Loan Details:[/]\n\n" +
-                               $"- [blue]Loan Amount[/]: {loanAmount:C}\n" +
-                               $"- [blue]Loan Term[/]: {loanTerm} months\n" +
-                               $"- [blue]Interest Rate[/]: {interestRate:F2}%\n"))
-                    .Border(BoxBorder.Rounded)
-                    .Expand();
+                var layout = new Layout()
+                    .SplitRows(
+                    new Layout("Left"), 
+                    new Layout("Right")
+                    );
+                // Update the left column
+                layout["Left"].Update(
+                    new Panel(
+                        Align.Center(
+                            new Markup($"[bold]Customer Name:[/]\n" +
+                                       $"{firstName} {lastName}\n" +
+                                       $"[bold]Customer Email:[/]\n" +
+                                       $"{email}\n\n" +
+                                       $"[bold]Loan Details:[/]\n\n" +
+                                       $"[blue]Loan Amount[/]: {loanAmount:C}\n" +
+                                       $"[blue]Loan Term[/]: {loanTerm} months\n" +
+                                       $"[blue]Interest Rate[/]: {interestRate:F2}%\n"),
+                            VerticalAlignment.Middle))
+                        .Expand());
 
-                AnsiConsole.Write(loanDetailsPanel);
-                // Display the amortization schedule as a table
-                var table = new Table();
+                // Update the right column
+                layout["Right"].Update(
+                    new Panel(
+                        Align.Center(
+                            new Markup($"[bold]Monthly Payment:[/]\n" +
+                                       $"{mortgageCalc.MonthlyPayment:C}\n"),
+                            VerticalAlignment.Middle))
+                        .Expand());
+
+                // Render the layout
+                AnsiConsole.Write(layout);
+
+
+        // Display the amortization schedule as a table
+        var table = new Table();
                 table.AddColumn("Month");
                 table.AddColumn("Payment");
                 table.AddColumn("Principal");
