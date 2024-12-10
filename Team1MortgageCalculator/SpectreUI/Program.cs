@@ -53,8 +53,8 @@ namespace SpectreUI
                 mortgageCalc.MortgagePaymentSchedule();
 
                 var layout = new Layout()
-                    .SplitRows(
-                    new Layout("Left"), 
+                    .SplitColumns(
+                    new Layout("Left"),
                     new Layout("Right")
                     );
                 // Update the left column
@@ -73,26 +73,43 @@ namespace SpectreUI
                             VerticalAlignment.Middle))
                         .Expand());
 
+                // Calculate proportions for the breakdown chart
+                decimal totalPrincipal = mortgageCalc.LoanInformation.LoanAmount;
+                decimal totalInterest = mortgageCalc.TotalInterestPaid;
+                decimal totalCost = mortgageCalc.TotalCost;
+
+                // Calculate percentages
+                decimal principalPercentage = (totalPrincipal / totalCost) * 100;
+                decimal interestPercentage = (totalInterest / totalCost) * 100;
+
                 // Update the right column
                 layout["Right"].Update(
                     new Panel(
                         Align.Center(
-                            new Markup($"[green]Monthly Payment:[/]\n" +
-                                       $"{mortgageCalc.MonthlyPayment:C}\n" +
-                                       $"[blue]Total Principal[/]\n" +
-                                       $"{loanAmount}\n" +
-                                       $"[blue]Total Interest[/]\n" +
-                                       $"{mortgageCalc.TotalInterestPaid}\n" +
-                                       $"[blue]Total Cost[/]\n" +
-                                       $"{mortgageCalc.TotalCost}\n"),
-                            VerticalAlignment.Middle))
-                        .Expand());
+                            new Rows(
+                                new Markup($"[green]Monthly Payment:[/]\n" +
+                                           $"{mortgageCalc.MonthlyPayment:C}\n" +
+                                           $"[blue]Total Principal:[/]\n" +
+                                           $"{totalPrincipal:C}\n" +
+                                           $"[blue]Total Interest:[/]\n" +
+                                           $"{totalInterest:C}\n" +
+                                           $"[blue]Total Cost:[/]\n" +
+                                           $"{totalCost:C}\n"),
+                                new BreakdownChart()
+                                    .Width(60)
+                                    .AddItem("Principal", (double)principalPercentage, Color.Green)
+                                    .AddItem("Interest", (double)interestPercentage, Color.Blue)
+                            )
+                        )
+                    )
+                    .Expand()
+                );
 
                 // Render the layout
                 AnsiConsole.Write(layout);
 
-        // Display the amortization schedule as a table
-        var table = new Table();
+                // Display the amortization schedule as a table
+                var table = new Table();
                 table.AddColumn("Month");
                 table.AddColumn("Payment");
                 table.AddColumn("Principal");
