@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -11,11 +14,23 @@ namespace MortgageCalculator
 	{
 		//define variables
 		private string _path = string.Empty;
+		public List<Customer> Customer { get; private set; }
 
+		//Console.WriteLine(System.IO.Path.GetFullPath(Assembly.GetExecutingAssembly().Location));
+		//Console.WriteLine(Environment.CurrentDirectory);
+		//Console.WriteLine(System.IO.Directory.GetCurrentDirectory());
+		//Console.WriteLine(System.Environment.CurrentDirectory);
+		//Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+
+		//on the user's machine should not produce file path for bin, executed from file folder, Replace is for debug purposes
+		public string currentDirectory => System.IO.Path.GetFullPath(Assembly.GetExecutingAssembly().Location).Replace(string.Empty, "SpectreUI\\bin\\Debug\\net8.0");
 
 		//constructor
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		public RecordKeeper()
 		{
 			this._path = currentDirectory;
@@ -28,6 +43,7 @@ namespace MortgageCalculator
 		//check if directory exist 
 		//check if file path exist if not create if exist overwrite
 
+<<<<<<< HEAD
 		public void SaveToFile(Customer customer)
 		{
 
@@ -49,11 +65,26 @@ namespace MortgageCalculator
 			{
 				Console.WriteLine(fnf.Message);
 			}
+=======
+		public void SaveToFile()
+		{
+			Path.Combine(this._path, $"{this.Customer}")
+			try
+			{
+				if(Directory.Exists(_path))
+				{
+
+				}
+			}
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		}
 
 
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		//public RecordKeeper {
 		//	try
 		//	{
@@ -65,7 +96,7 @@ namespace MortgageCalculator
 		//			{
 		//				Directory.CreateDirectory(target);
 		//			}
-		
+
 		//		// Change the current directory.
 		//		Environment.CurrentDirectory = (target);
 		//		if (path.Equals(Directory.GetCurrentDirectory()))
@@ -92,6 +123,6 @@ namespace MortgageCalculator
 		//method to delete records
 
 		//method to delete all records
-		
+
 	}
 }

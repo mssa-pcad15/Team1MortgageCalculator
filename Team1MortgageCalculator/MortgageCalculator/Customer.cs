@@ -17,7 +17,14 @@ namespace MortgageCalculator
 		private List<MortgageCalc> _customerMortgage;
 		private MortgageCalc _createMortgage;
 
-	
+		public event EventHandler CustomerCreate;
+
+		protected virtual void OnCustomerCreate(EventArgs e)
+		{
+			CustomerCreate?.Invoke(this, e);
+		}
+
+
 
 		//create get/set methods
 		public string Id { get { return _id; } set { _id = value; } }
@@ -44,10 +51,15 @@ namespace MortgageCalculator
 			this.FirstName = firstName;
 			this.LastName = lastName;
 			Email = email;
-			//this._createMortgage = createMortgage;
+			this._createMortgage = createMortgage;
 			//this._createMortgage = new List<MortgageCalc>();
+			//this._createMortgage = CreateMortgage(oanAmount, interestRate, loanDuration);
 		}
 
+		public void c_ThresholdReached(object sender, EventArgs e)
+		{
+			
+		}
 		
 
 		//public class CustomerConstructor
@@ -80,7 +92,7 @@ namespace MortgageCalculator
 
 		}
 
-		//write method to create loan
+		
 		public void CreateMortgage(decimal loanAmount, decimal interestRate, int loanDuration)
 		{
 			var createMortgage = new MortgageCalc(loanAmount, interestRate, loanDuration);
@@ -88,14 +100,14 @@ namespace MortgageCalculator
 			_customerMortgage.Add(createMortgage);
 		}
 
-		//write method to remove loan 
+		
 		public void RemoveMortgage(string id, int index) 
 		{
 			this._customerMortgage.RemoveAt(index);
 		}
 
 
-		// write method to delete loan after complete payment
+		
 		public void LoanRepayment(string id, int index)
 		{
 			//add condtional from loan repayment

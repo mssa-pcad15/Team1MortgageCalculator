@@ -1,6 +1,11 @@
 ﻿using Spectre.Console;
 using MortgageCalculator;
+<<<<<<< HEAD
 
+=======
+using System.Reflection;
+using System.Runtime.InteropServices;
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 namespace SpectreUI
 {
 	internal class Program
@@ -15,8 +20,72 @@ namespace SpectreUI
 			var email = AnsiConsole.Prompt(
 				new TextPrompt<string>("What's your email?"));
 
+<<<<<<< HEAD
 			// Echo the name and age back to the terminal
 			AnsiConsole.WriteLine($"{firstName} {lastName}: {email}?");
+=======
+			Console.WriteLine(System.IO.Path.GetFullPath(Assembly.GetCallingAssembly().Location));
+			Console.WriteLine(Environment.CurrentDirectory);
+			Console.WriteLine(System.IO.Directory.GetCurrentDirectory());
+			//Console.WriteLine(System.Environment.CurrentDirectory);
+			//Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+			
+
+
+
+			var selcetion = AnsiConsole.Prompt(
+				new MultiSelectionPrompt<string>()
+					.Title("What are your [green]favorite fruits[/]?")
+					.NotRequired() 
+					.PageSize(10)
+					.AddChoices(new[] {
+			"Apple", "Apricot", "Avocado",
+			"Banana", "Blackcurrant", "Blueberry",
+			"Cherry", "Cloudberry", "Coconut",
+		}));
+
+			userInformation.LoanAmount = AnsiConsole.Prompt(
+					new TextPrompt<decimal>("Loan Amount: ")
+						.Validate((n) => n != 0 ?
+						ValidationResult.Success() :
+						ValidationResult.Error("The loan amount must be greater than zero")));
+			userInformation.Term = AnsiConsole.Prompt(
+					new TextPrompt<int>("Term of the Loan: ")
+						.Validate((n) => n != 0 ?
+						ValidationResult.Success() :
+						ValidationResult.Error("The term of the loan must be greater than zero")));
+
+			userInformation.InterestRate = AnsiConsole.Prompt(
+					new TextPrompt<decimal>("Interest Rate: ")
+						.Validate((n) => n != 0 ?
+						ValidationResult.Success() :
+						ValidationResult.Error("The Loan amount must be greate than zero")));
+
+			//MortgageCalculator.MortgageCalc mortgageCalc = new();
+				
+			//switch statement 
+
+
+
+			//define global variables
+
+			// Create the layout
+			//var layout = new Layout("Root")
+			//	.SplitRows(
+			//		new Layout("Top").SplitColumns(
+			//			new Layout("Left"),
+			//			new Layout("Right")),
+			//		new Layout("Bottom"));
+
+
+			//// Update the left column
+			//layout["Left"].Update(
+			//	new Panel(
+			//		Align.Center(
+			//			new Markup("Hello [blue]World![/]"),
+			//			VerticalAlignment.Middle))
+			//		.Expand());
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 
 			var confirmation = AnsiConsole.Prompt(
 				new TextPrompt<bool>("Is the above information correct?")
