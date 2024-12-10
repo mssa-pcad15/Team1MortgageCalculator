@@ -1,6 +1,8 @@
 ﻿using Spectre.Console;
 using Spectre.Console.Cli;
 using MortgageCalculator;
+using System.Reflection;
+using System.Runtime.InteropServices;
 namespace SpectreUI
 
 {
@@ -29,6 +31,15 @@ namespace SpectreUI
 			UserInformation userInformation = new UserInformation();
 
 			AnsiConsole.Write(new FigletText("Mortgage Calculator").Color(Color.DarkRed).Centered());
+
+			Console.WriteLine(System.IO.Path.GetFullPath(Assembly.GetCallingAssembly().Location));
+			Console.WriteLine(Environment.CurrentDirectory);
+			Console.WriteLine(System.IO.Directory.GetCurrentDirectory());
+			//Console.WriteLine(System.Environment.CurrentDirectory);
+			//Console.WriteLine(System.AppDomain.CurrentDomain.BaseDirectory);
+			
+
+
 
 			var selcetion = AnsiConsole.Prompt(
 				new MultiSelectionPrompt<string>()
