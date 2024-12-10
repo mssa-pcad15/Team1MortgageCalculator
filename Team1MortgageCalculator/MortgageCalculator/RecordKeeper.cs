@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MortgageCalculator
@@ -13,6 +14,46 @@ namespace MortgageCalculator
 
 
 		//constructor
+<<<<<<< Updated upstream
+=======
+		public RecordKeeper()
+		{
+			this._path = currentDirectory;
+			this.Customer = new List<Customer>();
+		}
+
+
+		//triggered by event handler in customer class
+		//combine current directory with customer name for full file path
+		//check if directory exist 
+		//check if file path exist if not create if exist overwrite
+
+		public void SaveToFile(Customer customer)
+		{
+
+			var filePath = Path.Combine(this._path, $"{customer.Id}")
+			try
+			{
+				if(Directory.Exists(filePath))
+				{
+					JsonSerializer.Serialize(customer,
+						new JsonSerializerOptions
+						{
+							WriteIndented = true,
+							IncludeFields = true,
+
+						});
+				}
+			}
+			catch (FileNotFoundException fnf)
+			{
+				Console.WriteLine(fnf.Message);
+			}
+		}
+
+
+
+>>>>>>> Stashed changes
 		//public RecordKeeper {
 		//	try
 		//	{

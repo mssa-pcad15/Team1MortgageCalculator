@@ -21,8 +21,8 @@ namespace MortgageCalculator
 
 		//create get/set methods
 		public string Id { get { return _id; } set { _id = value; } }
-		public string FirstName { get; set; } = string.Empty;
-		public string LastName { get; set; } = string.Empty;
+		public string FirstName { get; set; }
+		public string LastName { get; set; } 
 		public string Email { get { return _email; } set { _email = value; } }
 		public List<MortgageCalc> CustomerMortgage => _customerMortgage;
 
@@ -41,8 +41,8 @@ namespace MortgageCalculator
 		{
 			
 			Id = Guid.NewGuid().ToString();
-			this.firstName = firstName;
-			this.lastName = lastName;
+			this.FirstName = firstName;
+			this.LastName = lastName;
 			Email = email;
 			//this._createMortgage = createMortgage;
 			//this._createMortgage = new List<MortgageCalc>();
