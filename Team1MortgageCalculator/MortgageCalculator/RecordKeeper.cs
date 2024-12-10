@@ -26,11 +26,6 @@ namespace MortgageCalculator
 		public string currentDirectory => System.IO.Path.GetFullPath(Assembly.GetExecutingAssembly().Location).Replace(string.Empty, "SpectreUI\\bin\\Debug\\net8.0");
 
 		//constructor
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		public RecordKeeper()
 		{
 			this._path = currentDirectory;
@@ -43,14 +38,14 @@ namespace MortgageCalculator
 		//check if directory exist 
 		//check if file path exist if not create if exist overwrite
 
-<<<<<<< HEAD
+
 		public void SaveToFile(Customer customer)
 		{
 
-			var filePath = Path.Combine(this._path, $"{customer.Id}")
+			var filePath = Path.Combine(this._path, $"{customer.Id}");
 			try
 			{
-				if(Directory.Exists(filePath))
+				if (Directory.Exists(filePath))
 				{
 					JsonSerializer.Serialize(customer,
 						new JsonSerializerOptions
@@ -65,64 +60,59 @@ namespace MortgageCalculator
 			{
 				Console.WriteLine(fnf.Message);
 			}
-=======
-		public void SaveToFile()
-		{
-			Path.Combine(this._path, $"{this.Customer}")
-			try
-			{
-				if(Directory.Exists(_path))
-				{
 
-				}
-			}
->>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
+			//	public void SaveToFile()
+			//	{
+			//		Path.Combine(this._path, $"{this.Customer}")
+			//		try
+			//		{
+			//			if (Directory.Exists(_path))
+			//			{
+
+			//			}
+			//		}
+
+			//}
+
+			//public RecordKeeper {
+			//	try
+			//	{
+			//		// Get the current directory.
+			//		string path = Directory.GetCurrentDirectory();
+			//		string target = @"c:\temp";
+			//		Console.WriteLine("The current directory is {0}", path);
+			//			if (!Directory.Exists(target))
+			//			{
+			//				Directory.CreateDirectory(target);
+			//			}
+
+			//		// Change the current directory.
+			//		Environment.CurrentDirectory = (target);
+			//		if (path.Equals(Directory.GetCurrentDirectory()))
+			//		{
+			//			Console.WriteLine("You are in the temp directory.");
+			//		}
+
+			//		else
+			//		{
+			//			Console.WriteLine("You are not in the temp directory.");
+			//		}
+			//	}
+			//	catch (Exception e)
+			//	{
+			//		Console.WriteLine("The process failed: {0}", e.ToString());
+			//	}
+			//}
+
+			//method to retrieve Customer or implement with creation of customer
+
+
+			//method to update records
+
+			//method to delete records
+
+			//method to delete all records
+
 		}
-
-
-
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
-		//public RecordKeeper {
-		//	try
-		//	{
-		//		// Get the current directory.
-		//		string path = Directory.GetCurrentDirectory();
-		//		string target = @"c:\temp";
-		//		Console.WriteLine("The current directory is {0}", path);
-		//			if (!Directory.Exists(target))
-		//			{
-		//				Directory.CreateDirectory(target);
-		//			}
-
-		//		// Change the current directory.
-		//		Environment.CurrentDirectory = (target);
-		//		if (path.Equals(Directory.GetCurrentDirectory()))
-		//		{
-		//			Console.WriteLine("You are in the temp directory.");
-		//		}
-
-		//		else
-		//		{
-		//			Console.WriteLine("You are not in the temp directory.");
-		//		}
-		//	}
-		//	catch (Exception e)
-		//	{
-		//		Console.WriteLine("The process failed: {0}", e.ToString());
-		//	}
-		//}
-
-		//method to retrieve Customer or implement with creation of customer
-
-
-		//method to update records
-
-		//method to delete records
-
-		//method to delete all records
-
 	}
 }

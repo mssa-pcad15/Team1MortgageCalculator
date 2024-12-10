@@ -17,15 +17,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include ="Assets\icon.png">
+    <Compile Remove="Assest\**" />
+    <EmbeddedResource Remove="Assest\**" />
+    <None Remove="Assest\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Assets\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assest\" />
   </ItemGroup>
 
 </Project>

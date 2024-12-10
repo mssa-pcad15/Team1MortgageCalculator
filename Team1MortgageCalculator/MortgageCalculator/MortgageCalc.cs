@@ -99,7 +99,7 @@ namespace MortgageCalculator
             // Update TotalInterestPaid
             LoanInformation.TotalInterestPaid = Math.Round(totalInterestPaid, 2);
         }
-            public decimal TotalCost => LoanInformation.TotalInterestPaid + LoanInformation.LoanAmount;
+        public decimal TotalCost => LoanInformation.TotalInterestPaid + LoanInformation.LoanAmount;
     }
 
 }
