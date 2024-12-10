@@ -8,7 +8,7 @@ namespace SpectreUI
         static void Main(string[] args)
         {
 			AnsiConsole.Write(
-						new FigletText("Mortgage Calculator").Color(Color.Black).Centered());
+						new FigletText("Mortgage Calculator").Color(Color.Red3_1).Centered());
 
 			var firstName = AnsiConsole.Prompt(
             new TextPrompt<string>("What's your first name?"));
