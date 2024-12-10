@@ -13,9 +13,7 @@ namespace MortgageCalculator
         public List<PaymentSchedule> Payments { get; set; } = new List<PaymentSchedule>();
         public decimal RemainingBalance { get; set; }
         public decimal TotalCost { get; set; }
-
         public decimal TotalInterestPaid { get; set; }
-
         public decimal InterestRatePayments { get; set; }
 
 
@@ -65,8 +63,9 @@ namespace MortgageCalculator
         public decimal TotalInterest(int month) => TotalInterest(month) + InterestRatePayment(month);
 
         public decimal RemainingBalance => LoanInformation.LoanAmount *
-    (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) -
-    (MonthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) - 1) / (LoanInformation.InterestRate / 1200));
+            (decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) -
+            (MonthlyPayment * ((decimal)Math.Pow(1 + (double)(LoanInformation.InterestRate / 1200), 1) - 1) / (LoanInformation.InterestRate / 1200));
+
         public decimal InterestRatePayments => LoanInformation.RemainingBalance * (LoanInformation.InterestRate / 1200);
 
         public decimal TotalInterestPaid => LoanInformation.TotalInterestPaid + LoanInformation.InterestRatePayments;
