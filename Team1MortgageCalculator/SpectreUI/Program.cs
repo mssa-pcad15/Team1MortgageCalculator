@@ -61,11 +61,12 @@ namespace SpectreUI
                 layout["Left"].Update(
                     new Panel(
                         Align.Center(
-                            new Markup($"[bold]Customer Name:[/]\n" +
+                            new Markup($"[green]Customer Info:[/]\n" +
+                                       $"[blue]Customer Name:[/]\n" +
                                        $"{firstName} {lastName}\n" +
-                                       $"[bold]Customer Email:[/]\n" +
+                                       $"[blue]Customer Email:[/]\n" +
                                        $"{email}\n\n" +
-                                       $"[bold]Loan Details:[/]\n\n" +
+                                       $"[green]Loan Details:[/]\n\n" +
                                        $"[blue]Loan Amount[/]: {loanAmount:C}\n" +
                                        $"[blue]Loan Term[/]: {loanTerm} months\n" +
                                        $"[blue]Interest Rate[/]: {interestRate:F2}%\n"),
@@ -76,14 +77,19 @@ namespace SpectreUI
                 layout["Right"].Update(
                     new Panel(
                         Align.Center(
-                            new Markup($"[bold]Monthly Payment:[/]\n" +
-                                       $"{mortgageCalc.MonthlyPayment:C}\n"),
+                            new Markup($"[green]Monthly Payment:[/]\n" +
+                                       $"{mortgageCalc.MonthlyPayment:C}\n" +
+                                       $"[blue]Total Principal[/]\n" +
+                                       $"{loanAmount}\n" +
+                                       $"[blue]Total Interest[/]\n" +
+                                       $"{loanTerm}\n" +
+                                       $"[blue]Total Cost[/]\n" +
+                                       $"{loanTerm}\n"),
                             VerticalAlignment.Middle))
                         .Expand());
 
                 // Render the layout
                 AnsiConsole.Write(layout);
-
 
         // Display the amortization schedule as a table
         var table = new Table();
@@ -105,7 +111,24 @@ namespace SpectreUI
                         $"{payment.RemainingBalance:C}");
                 }
 
-                AnsiConsole.Write(table);
+                var seeSchedule = AnsiConsole.Prompt(
+                new TextPrompt<bool>($"Would you like to see your {loanTerm} month payment schedule?")
+                    .AddChoice(true)
+                    .AddChoice(false)
+                    .DefaultValue(true)
+                    .WithConverter(choice => choice ? "y" : "n"));
+
+                // Echo the confirmation back to the terminal
+                Console.WriteLine(seeSchedule ? "Here is your payment schedule:" : "Please exit the program.");
+                if (seeSchedule == false)
+                {
+                    System.Environment.Exit(0);
+                }
+                else
+                {
+                    // Render the table to the console
+                    AnsiConsole.Write(table);
+                }
             }
         }
     }
