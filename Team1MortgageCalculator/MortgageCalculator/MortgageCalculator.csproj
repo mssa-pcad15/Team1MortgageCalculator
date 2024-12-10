@@ -14,6 +14,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/mssa-pcad15/Team1MortgageCalculator</RepositoryUrl>
     <PackageLicenseExpression>AFL-1.1</PackageLicenseExpression>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
