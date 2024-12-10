@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MortgageCalculator
@@ -25,6 +26,11 @@ namespace MortgageCalculator
 		public string currentDirectory => System.IO.Path.GetFullPath(Assembly.GetExecutingAssembly().Location).Replace(string.Empty, "SpectreUI\\bin\\Debug\\net8.0");
 
 		//constructor
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		public RecordKeeper()
 		{
 			this._path = currentDirectory;
@@ -37,6 +43,29 @@ namespace MortgageCalculator
 		//check if directory exist 
 		//check if file path exist if not create if exist overwrite
 
+<<<<<<< HEAD
+		public void SaveToFile(Customer customer)
+		{
+
+			var filePath = Path.Combine(this._path, $"{customer.Id}")
+			try
+			{
+				if(Directory.Exists(filePath))
+				{
+					JsonSerializer.Serialize(customer,
+						new JsonSerializerOptions
+						{
+							WriteIndented = true,
+							IncludeFields = true,
+
+						});
+				}
+			}
+			catch (FileNotFoundException fnf)
+			{
+				Console.WriteLine(fnf.Message);
+			}
+=======
 		public void SaveToFile()
 		{
 			Path.Combine(this._path, $"{this.Customer}")
@@ -47,10 +76,15 @@ namespace MortgageCalculator
 
 				}
 			}
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		}
 
 
 
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> b2469e0a96c39df928c55f7f4252f281f97a9c15
 		//public RecordKeeper {
 		//	try
 		//	{

@@ -11,16 +11,21 @@
     <Authors>Team1</Authors>
     <Company>PCAD15</Company>
     <PackageProjectUrl>https://github.com/mssa-pcad15/Team1MortgageCalculator</PackageProjectUrl>
-    <PackageIcon>128 x 128 jpeg of mortgage calculator.png</PackageIcon>
+    <PackageIcon>icon.png</PackageIcon>
     <RepositoryUrl>https://github.com/mssa-pcad15/Team1MortgageCalculator</RepositoryUrl>
     <PackageLicenseExpression>AFL-1.1</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\Links\Downloads\128 x 128 jpeg of mortgage calculator.png">
+    <None Include ="Assets\icon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assest\" />
   </ItemGroup>
 
 </Project>
