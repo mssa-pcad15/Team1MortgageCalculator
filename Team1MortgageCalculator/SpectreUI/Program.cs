@@ -9,9 +9,9 @@ namespace SpectreUI
         {
 
             var firstName = AnsiConsole.Prompt(
-    new TextPrompt<string>("What's your first name?"));
+            new TextPrompt<string>("What's your first name?"));
             var lastName = AnsiConsole.Prompt(
-new TextPrompt<string>("What's your last name?"));
+            new TextPrompt<string>("What's your last name?"));
             var email = AnsiConsole.Prompt(
                 new TextPrompt<string>("What's your email?"));
 
@@ -64,14 +64,13 @@ new TextPrompt<decimal>("Please enter the loan amount: "));
     + $"\n Your monthly payments are: {m.monthlyPayment}"),
     VerticalAlignment.Top))
     .Expand());
+                    layout["Bottom"].Update(
+        new Panel(
+        Align.Center(
+        new Markup("[blue]Mortgage Payment Summary:[/]" + $"\n{m.LoanInformation.Payments.Count}"),
+        VerticalAlignment.Top))
+        .Expand());
 
-
-                layout["Bottom"].Update(
-    new Panel(
-    Align.Center(
-    new Markup("[blue]Mortgage Payment Summary:[/]" + $"{firstName}"),
-    VerticalAlignment.Top))
-    .Expand());
                 // render the layout
                 AnsiConsole.Write(layout);
             }
