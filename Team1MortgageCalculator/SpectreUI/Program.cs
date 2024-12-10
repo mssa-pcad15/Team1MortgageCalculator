@@ -34,9 +34,9 @@ namespace SpectreUI
             else
             {
                 decimal loanAmount = AnsiConsole.Prompt(
-new TextPrompt<decimal>("Please enter the loan amount: "));
+                new TextPrompt<decimal>("Please enter the loan amount: "));
                 decimal interestRate = AnsiConsole.Prompt(
-    new TextPrompt<decimal>("Please enter the interest rate: "));
+                new TextPrompt<decimal>("Please enter the interest rate: "));
                 int loanDuration = AnsiConsole.Prompt(
                     new TextPrompt<int>("Please enter the loan duration (in months):"));
                 MortgageCalc m = new MortgageCalc(loanAmount, interestRate, loanDuration);
@@ -51,25 +51,25 @@ new TextPrompt<decimal>("Please enter the loan amount: "));
 
 
                 layout["Left"].Update(
-        new Panel(
-            Align.Center(
+                new Panel(
+                Align.Center(
                 new Markup("[blue]Customer Info:[/] \n" + $"{firstName} {lastName} \n{email}"),
                 VerticalAlignment.Top))
-            .Expand());
+                .Expand());
 
                 layout["Right"].Update(
-    new Panel(
-    Align.Center(
-    new Markup("[blue]Mortgage Input:[/] \n" + $"Loan Amount: {loanAmount} \n Interest Rate: {interestRate} \n Loan Duration: {loanDuration}"
-    + $"\n Your monthly payments are: {m.monthlyPayment}"),
-    VerticalAlignment.Top))
-    .Expand());
+                new Panel(
+                Align.Center(
+                new Markup("[blue]Mortgage Input:[/] \n" + $"Loan Amount: {loanAmount} \n Interest Rate: {interestRate} \n Loan Duration: {loanDuration}"
+                + $"\n Your monthly payments are: {m.monthlyPayment}"),
+                VerticalAlignment.Top))
+                .Expand());
                     layout["Bottom"].Update(
-        new Panel(
-        Align.Center(
-        new Markup("[blue]Mortgage Payment Summary:[/]" + $"\n{m.LoanInformation.Payments.Count}"),
-        VerticalAlignment.Top))
-        .Expand());
+               new Panel(
+               Align.Center(
+               new Markup("[blue]Mortgage Payment Summary:[/]" + $"\n{m.LoanInformation.Payments.Count}"),
+               VerticalAlignment.Top))
+               .Expand());
 
                 // render the layout
                 AnsiConsole.Write(layout);
